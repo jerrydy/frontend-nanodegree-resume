@@ -16,7 +16,6 @@ var bio = {
 };
 
 // Encapsulating display function with the bio object
-
 bio.display = function () {
   $("#header").prepend (HTMLheaderRole.replace ("%data%", bio.role));
   $("#header").prepend (HTMLheaderName.replace ("%data%", bio.name));
@@ -31,6 +30,9 @@ bio.display = function () {
   bio.displayContacts ("#topContacts");
   bio.displayContacts ("#footerContacts");
 };
+
+/* contact information is displayed at the top and bottom of the page
+   so make it a separate function that can be called by bio.display */
 
 bio.displayContacts = function (selector) {
   $(selector).append (HTMLmobile.replace ("%data%", bio.contacts.mobile));
@@ -81,12 +83,14 @@ var projects = {
         {
             "title": "AT&T Dedicated Ethernet",
             "dates": "2014",
-            "description": "Responsible for developing an application for capacity managing dedicated ethernet equipment. This includes the development of a backend Oracle database for inventory of equipment, cards and port capacitiies, and a front end GUI for generating reports."
+            "description": "Responsible for developing an application for capacity managing dedicated ethernet equipment. This includes the development of a backend Oracle database for inventory of equipment, cards and port capacitiies, and a front end GUI for generating reports.",
+            "image": "http://placekitten.com/350/200"
         },
         {
             "title": "PIC/LPIC",
             "dates": "2003",
-            "description": "Responsible for writing a Unix application for transmitting orders for provisioning in the central office switches and generating transactions billing systems."
+            "description": "Responsible for writing a Unix application for transmitting orders for provisioning in the central office switches and generating transactions billing systems.",
+            "image": "http://placekitten.com/350/250"
         }
     ]
 }
@@ -97,6 +101,7 @@ projects.display = function () {
     $(".project-entry:last").append (HTMLprojectTitle.replace ("%data%", projects.project[i].title));
     $(".project-entry:last").append (HTMLprojectDates.replace ("%data%", projects.project[i].dates));
     $(".project-entry:last").append (HTMLprojectDescription.replace ("%data%", projects.project[i].description));
+    $(".project-entry:last").append (HTMLprojectImage.replace ("%data%", projects.project[i].image));
   }
 }
 
