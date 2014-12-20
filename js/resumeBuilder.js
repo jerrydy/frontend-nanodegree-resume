@@ -20,11 +20,6 @@ var bio = {
 bio.display = function () {
   $("#header").prepend (HTMLheaderRole.replace ("%data%", bio.role));
   $("#header").prepend (HTMLheaderName.replace ("%data%", bio.name));
-  $("#topContacts").append (HTMLmobile.replace ("%data%", bio.contacts.mobile));
-  $("#topContacts").append (HTMLemail.replace ("%data%", bio.contacts.email));
-  $("#topContacts").append (HTMLtwitter.replace ("%data%", bio.contacts.twitter));
-  $("#topContacts").append (HTMLgithub.replace ("%data%", bio.contacts.github));
-  $("#topContacts").append (HTMLlocation.replace ("%data%", bio.contacts.location));
   $("#header").append (HTMLbioPic.replace ("%data%", bio.bioPic));
   $("#header").append (HTMLWelcomeMsg.replace ("%data%", bio.welcomeMessage));
   if (bio.skills) {
@@ -33,7 +28,17 @@ bio.display = function () {
       $("#skills").append (HTMLskills.replace ("%data%", bio.skills[i]));
     }
   }
+  bio.displayContacts ("#topContacts");
+  bio.displayContacts ("#footerContacts");
 };
+
+bio.displayContacts = function (selector) {
+  $(selector).append (HTMLmobile.replace ("%data%", bio.contacts.mobile));
+  $(selector).append (HTMLemail.replace ("%data%", bio.contacts.email));
+  $(selector).append (HTMLtwitter.replace ("%data%", bio.contacts.twitter));
+  $(selector).append (HTMLgithub.replace ("%data%", bio.contacts.github));
+  $(selector).append (HTMLlocation.replace ("%data%", bio.contacts.location));
+}
 
 // Work history
 
@@ -166,7 +171,7 @@ projects.display ();
 education.display ();
 
 //$(function () {
-  $("img").attr("src", "http://placekitten.com/350/150");
+//  $("img").attr("src", "http://placekitten.com/350/150");
 //});
 
 // The following were added as part of exercises during the lessons, just commenting for future reference.

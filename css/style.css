@@ -55,6 +55,7 @@ h2, h3, h4, h5 {
   color: #999999;
   line-height: 16px;
   float: left;
+  margin-left: 50px;
 }
 
 .location-text {
@@ -212,4 +213,28 @@ span {
   .biopic {
     display: block;
   }
+}
+
+/* make background my favorite color */
+.jerryStyle {
+  background-color: #000033;
+}
+
+.jerryStyle h2 {
+  color: #00FFFF;
+}
+
+.jerryStyle h3 {
+  color: #686868;
+}
+
+/* indent the paragraphs a little bit */
+.jerryStyle p {
+  color: yellow;
+  margin-left: 50px;
+}
+
+.jerryStyle .major-text {
+  color: #0099FF;
+  padding-left: 50px;
 }
