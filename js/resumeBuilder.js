@@ -187,9 +187,9 @@ education.display ();
   return names[0] + " " + names[1].toUpperCase ();
 }*/
 
-/*$(document).click(function(loc) {
+$(document).click(function(loc) {
   logClicks (loc.pageX, loc.pageY);
-});*/
+});
 
 $("#mapDiv").append (googleMap);
 
